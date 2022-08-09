@@ -34,10 +34,7 @@ if($length != 10)
 	header("location: error.php");
 	die();
 }
-
- if($category == FARMER)
- {
-    $sql = "SELECT * FROM user WHERE email='$email'";
+    $sql = "SELECT * FROM user WHERE username='$email'";
 
     $result = mysqli_query($conn, "SELECT * FROM user WHERE email='$email'") or die($mysqli->error());
 
@@ -67,15 +64,15 @@ if($length != 10)
 
             
 
-            $to      = $email;
-            $subject = "Account Verification ( ArtCircle.com )";
-            $message_body = "
-            Hello '.$user.',
+            // $to      = $email;
+            // $subject = "Account Verification ( ArtCircle.com )";
+            // $message_body = "
+            // Hello '.$user.',
 
-            Thank you for signing up!
+            // Thank you for signing up!
 
 
-            http://localhost/project/Login/verify.php?email=".$email."&hash=".$hash;
+            // http://localhost/project/Login/verify.php?email=".$email."&hash=".$hash;
 
             header("location: farmer.php");
     	}
@@ -85,62 +82,61 @@ if($length != 10)
     	    $_SESSION['message'] = "Registration failed!";
             header("location: error.php");
     	}
-    }
-}
+     }
 
-  elseif($category== LAND_OWNER)
-  {
-      $sql = "SELECT * FROM user WHERE username='$email'";
+//   elseif($category== LAND_OWNER)
+//   {
+//       $sql = "SELECT * FROM user WHERE username='$email'";
 
-      $result = mysqli_query($conn, "SELECT * FROM user WHERE username='$email'") or die($mysqli->error());
+//       $result = mysqli_query($conn, "SELECT * FROM user WHERE username='$email'") or die($mysqli->error());
 
-      if ($result->num_rows > 0 )
-      {
-          $_SESSION['message'] = "User with this email already exists!";
-          //echo $_SESSION['message'];
-          header("location: error.php");
-      }
-      else
-      {
-      	$sql = "INSERT INTO user (name, username, password, hash, mobile, email, address,category)
-      			VALUES ('$name','$user','$pass','$mobile','$email','$addr',$category')";
+//       if ($result->num_rows > 0 )
+//       {
+//           $_SESSION['message'] = "User with this email already exists!";
+//           //echo $_SESSION['message'];
+//           header("location: error.php");
+//       }
+//       else
+//       {
+//       	$sql = "INSERT INTO user (name, username, password, hash, mobile, email, address,category)
+//       			VALUES ('$name','$user','$pass','$mobile','$email','$addr',$category')";
 
-      	if (mysqli_query($conn, $sql))
-      	{
-      	    $_SESSION['Active'] = 0;
-              $_SESSION['logged_in'] = true;
+//       	if (mysqli_query($conn, $sql))
+//       	{
+//       	    $_SESSION['Active'] = 0;
+//               $_SESSION['logged_in'] = true;
 
-              $sql = "SELECT * FROM user WHERE username='$email'";
-              $result = mysqli_query($conn, $sql);
-              $User = $result->fetch_assoc();
-              $_SESSION['id'] = $User['id'];
+//               $sql = "SELECT * FROM user WHERE username='$email'";
+//               $result = mysqli_query($conn, $sql);
+//               $User = $result->fetch_assoc();
+//               $_SESSION['id'] = $User['id'];
 
-              $_SESSION['message'] =
+//               $_SESSION['message'] =
 
-                       "Confirmation link has been sent to $email, please verify
-                       your account by clicking on the link in the message!";
+//                        "Confirmation link has been sent to $email, please verify
+//                        your account by clicking on the link in the message!";
 
-              $to      = $email;
-              $subject = "Account Verification ( ArtCircle.com )";
-              $message_body = "
-             Hello '.$user.',
+//               $to      = $email;
+//               $subject = "Account Verification ( ArtCircle.com )";
+//               $message_body = "
+//              Hello '.$user.',
 
-              Thank you for signing up!
+//               Thank you for signing up!
 
-              http://localhost/project/Login/verify.php?email=".$email."&hash=".$hash;
+//               http://localhost/project/Login/verify.php?email=".$email."&hash=".$hash;
 
-              //$check = mail( $to, $subject, $message_body );
+//               //$check = mail( $to, $subject, $message_body );
 
-              header("location: landowner.php");
-      	}
-    }
-      	else
-      	{
-      	    //echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-      	    $_SESSION['message'] = "Registration not successfull!";
-              header("location: error.php");
-      	}
-    }
+//               header("location: landowner.php");
+//       	}
+//     }
+//       	else
+//       	{
+//       	    //echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+//       	    $_SESSION['message'] = "Registration not successfull!";
+//               header("location: error.php");
+//       	}
+//     }
 
 
 function dataFilter($data)

@@ -32,7 +32,7 @@
                     <li><a href="<?php echo $link; ?>"><?php echo $loginProfile; ?></a></li>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="">About Us</a></li>
-                    <li><a href="#footer">Contact Us</a></li>
+                    <!-- <li><a href="#footer">Contact Us</a></li> -->
                 </ul>
             </nav>
 </body>

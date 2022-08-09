@@ -19,7 +19,6 @@
 
     else
     {
-    
         $User = $result->fetch_assoc();
 
         if (password_verify($_POST['pass'], $User['password']))
@@ -36,7 +35,7 @@
             $_SESSION['picStatus'] = $User['picStatus'];
             $_SESSION['picExt'] = $User['picExt'];
             $_SESSION['logged_in'] = true;
-            $_SESSION['Category'] = $category;
+            $_SESSION['Category'] = $User['category'];
 
             if($_SESSION['picStatus'] == 0)
             {
@@ -51,13 +50,17 @@
             //echo $_SESSION['Email']."  ".$_SESSION['Name'];
 
             if($category == 'LAND_OWNER') {
-                header("location: landowner.php");
+                header("location: error.php");
             } 
             elseif($category == 'ADMIN') {
-                header("location: admin/dashboard.php");
+                header("location: profile.php");
             }
             elseif($category == 'FARMER') {
-                header("location: farmer.php");
+                header("location: error.php");
+            }
+            header("location: profile.php");
+
+               
         
         }
         else
@@ -69,7 +72,7 @@
     }
     
     
-}
+
     
 
     function dataFilter($data)

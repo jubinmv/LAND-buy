@@ -71,7 +71,7 @@
                   <h2><?php echo $name; ?></h2>
                   <p><?= $email ?></p>
 
-                 <?php if($_SESSION['Category'] == 1): ?>
+                 
                     <div class="row uniform">
                         <div class="6u 12u$(xsmall)">
                             <a href=../profileView.php class="button special">My Profile</a>
@@ -80,6 +80,7 @@
                             <a href="logout.php" class="button special">LOG OUT</a>
                         </div>
                     </div>
+                    <?php if($_SESSION['Category'] == 'ADMIN'): ?>
                     <div class="row uniform">
                         <div class="6u 12u$(xsmall)">
                             <a href=../viewland.php class="button special">View Land</a>

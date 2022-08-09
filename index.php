@@ -63,9 +63,9 @@
 							<i class="icon big rounded fa-clock-o"></i>
 							<p>About</p>
 						</section>
-						<section class="4u 12u$(small)">
+						<!-- <section class="4u 12u$(small)">
 							<i class="icon big rounded fa-comments"></i>
-							<p>Contact</p>
+							<p>Contact</p> -->
 						</section>
 						<section class="4u$ 12u$(small)">
 							<i class="icon big rounded fa-user"></i>
