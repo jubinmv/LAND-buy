@@ -46,8 +46,8 @@ if($length != 10)
     }
     else
     {
-    	$sql = "INSERT INTO user (name, password, mobile, email, address, category)
-    			VALUES ('$name','$pass','$mobile','$email','$addr', '$category')";
+    	$sql = "INSERT INTO user (name,username, password, mobile, email, address, category)
+    			VALUES ('$name','$name','$pass','$mobile','$email','$addr', '$category')";
 
     	if (mysqli_query($conn, $sql))
     	{
@@ -61,6 +61,18 @@ if($length != 10)
             $result = mysqli_query($conn, $sql);
             $User = $result->fetch_assoc();
             $_SESSION['id'] = $User['id'];
+            $_SESSION['Hash'] = $User['hash'];
+            $_SESSION['Password'] = $User['password'];
+            $_SESSION['Email'] = $User['email'];
+            $_SESSION['Name'] = $User['name'];
+            $_SESSION['Username'] = $User['username'];
+            $_SESSION['Mobile'] = $User['mobile'];
+            $_SESSION['Addr'] = $User['address'];
+            $_SESSION['Active'] = $User['active'];
+            $_SESSION['picStatus'] = $User['picStatus'];
+            $_SESSION['picExt'] = $User['picExt'];
+            $_SESSION['logged_in'] = true;
+            $_SESSION['Category'] = $User['category'];
 
             
 
@@ -74,7 +86,18 @@ if($length != 10)
 
             // http://localhost/project/Login/verify.php?email=".$email."&hash=".$hash;
 
-            header("location: farmer.php");
+            if($_SESSION['Category'] == 'LAND_OWNER') {
+                header("location: landowner.php");
+            } 
+            elseif($_SESSION['Category'] == 'ADMIN') {
+                header("location: dashboard.php");
+            }
+            elseif($_SESSION['Category']== 'FARMER') {
+                header("location: farmer.php");
+            }else {
+                header("location: error.php");
+
+            }
     	}
     	else
     	{
@@ -83,60 +106,6 @@ if($length != 10)
             header("location: error.php");
     	}
      }
-
-//   elseif($category== LAND_OWNER)
-//   {
-//       $sql = "SELECT * FROM user WHERE username='$email'";
-
-//       $result = mysqli_query($conn, "SELECT * FROM user WHERE username='$email'") or die($mysqli->error());
-
-//       if ($result->num_rows > 0 )
-//       {
-//           $_SESSION['message'] = "User with this email already exists!";
-//           //echo $_SESSION['message'];
-//           header("location: error.php");
-//       }
-//       else
-//       {
-//       	$sql = "INSERT INTO user (name, username, password, hash, mobile, email, address,category)
-//       			VALUES ('$name','$user','$pass','$mobile','$email','$addr',$category')";
-
-//       	if (mysqli_query($conn, $sql))
-//       	{
-//       	    $_SESSION['Active'] = 0;
-//               $_SESSION['logged_in'] = true;
-
-//               $sql = "SELECT * FROM user WHERE username='$email'";
-//               $result = mysqli_query($conn, $sql);
-//               $User = $result->fetch_assoc();
-//               $_SESSION['id'] = $User['id'];
-
-//               $_SESSION['message'] =
-
-//                        "Confirmation link has been sent to $email, please verify
-//                        your account by clicking on the link in the message!";
-
-//               $to      = $email;
-//               $subject = "Account Verification ( ArtCircle.com )";
-//               $message_body = "
-//              Hello '.$user.',
-
-//               Thank you for signing up!
-
-//               http://localhost/project/Login/verify.php?email=".$email."&hash=".$hash;
-
-//               //$check = mail( $to, $subject, $message_body );
-
-//               header("location: landowner.php");
-//       	}
-//     }
-//       	else
-//       	{
-//       	    //echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-//       	    $_SESSION['message'] = "Registration not successfull!";
-//               header("location: error.php");
-//       	}
-//     }
 
 
 function dataFilter($data)

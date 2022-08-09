@@ -131,15 +131,15 @@
     <div class="container w-100 pa-2">
     <h3>Login</h3>
 							<form method="post" action="Login/login.php">
-								<div class="row uniform 50% w-100">
-									<div class="7u$ w-100">
+								<div class="row uniform 50% w-100 ma-0">
+									<div class="7u$ w-100 pa-0">
 										<input type="text" name="uname" id="uname" value="" placeholder="UserName" class="w-100" required/>
 									</div>
-									<div class="7u$ w-100">
+									<div class="7u$ w-100 mt-2 pa-0">
 										<input type="password" name="pass" id="pass" value="" placeholder="Password" class="w-100" required/>
 									</div>
 								</div>
-									<div class="row uniform w-100">
+									<!-- <div class="row uniform w-100">
 										<p>
 				                            <b>User Type : </b>
 				                        </p>
@@ -155,8 +155,8 @@
 				                            <input type="radio" id="farmer" name="category" value="FARMER">
 				                            <label for="farmer">Farmer</label>
 				                        </div>
-									</div>
-									<div class="row uniform w-100 ma-0">											
+									</div> -->
+									<div class="row uniform w-50 mt-2 ml-0">											
 										<div class="7u 12u$(small) w-100 pa-0">
 											<input type="submit" value="Login" class="w-100" />
 										</div>

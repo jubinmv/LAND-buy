@@ -36,15 +36,65 @@ session_start();
 		<link rel="stylesheet" href="../css/skel.css" />
 		<link rel="stylesheet" href="../css/style.css" />
 		<link rel="stylesheet" href="../css/style-xlarge.css" />
+		<link rel="stylesheet" href="../css/dashboard-style.css" />
     </head>
 
 	<body>
 	   <?php
             require 'menu.php';
         ?>
-        <div>
-            <h1 style="text-align: center; font-size: 2em; margin: auto; padding-top: 50px">Hi, Landowner</h1>
-        </div>
+	    <!-- <section id="banner">
+			<div class="container"> -->
+                <!-- Component Start -->
+				<div class="wrapper">
+  <!-- Sidebar Holder -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <h3 class="dashboard-title-text ma-0">Admin Dashboard</h3>
+      
+    </div>
+
+    <ul class="list-unstyled components">
+      <!-- <p>Dummy Heading</p> -->
+      <!-- <li class="active">
+        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
+        <ul class="collapse list-unstyled" id="homeSubmenu">
+          <li><a href="#">Home 1</a></li>
+          <li><a href="#">Home 2</a></li>
+          <li><a href="#">Home 3</a></li>
+        </ul>
+      </li> -->
+      <li>
+        <a href="../index.php">Home</a>
+        <!-- <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a> -->
+        <!-- <ul class="collapse list-unstyled" id="pageSubmenu">
+          <li><a href="#">Page 1</a></li>
+          <li><a href="#">Page 2</a></li>
+          <li><a href="#">Page 3</a></li>
+        </ul> -->
+      </li>
+      <li>
+        <a href="#">Manage Landowners</a>
+      </li>
+      <li>
+        <a href="#">Manage farmers</a>
+      </li>
+      <li>
+        <a href="#">Notifications</a>
+      </li>
+    </ul>
+
+    <ul class="list-unstyled CTAs ma-0">
+      <li><a href="../Login/profile.php" class="article">View Profile</a></li>
+    </ul>
+    <ul class="list-unstyled CTAs">
+      <li><a href="../Login/logout.php" class="article">Logout</a></li>
+    </ul>
+  </nav>
+	<!-- Component End  -->
+                </div>
+            <!-- </div>
+        </section> -->
 
     		<script src="../assets/js/jquery.min.js"></script>
             <script src="../assets/js/jquery.scrolly.min.js"></script>

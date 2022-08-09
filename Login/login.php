@@ -3,7 +3,6 @@
 
     $user = dataFilter($_POST['uname']);
     $pass = $_POST['pass'];
-    $category = dataFilter($_POST['category']);
 
     require '../db.php';
 
@@ -16,7 +15,6 @@
         $_SESSION['message'] = "Invalid User Credentialss!";
         header("location: error.php");
     }
-
     else
     {
         $User = $result->fetch_assoc();
@@ -36,6 +34,7 @@
             $_SESSION['picExt'] = $User['picExt'];
             $_SESSION['logged_in'] = true;
             $_SESSION['Category'] = $User['category'];
+            // error_log('category', $_SESSION['Category']);
 
             if($_SESSION['picStatus'] == 0)
             {
@@ -48,20 +47,19 @@
                 $_SESSION['picName'] = "profile".$_SESSION['picId'].".".$_SESSION['picExt'];
             }
             //echo $_SESSION['Email']."  ".$_SESSION['Name'];
+            
 
-            if($category == 'LAND_OWNER') {
-                header("location: error.php");
+            if($_SESSION['Category'] == 'LAND_OWNER') {
+                header("location: landowner.php");
             } 
-            elseif($category == 'ADMIN') {
-                header("location: profile.php");
+            elseif($_SESSION['Category'] == 'ADMIN') {
+                header("location: dashboard.php");
             }
-            elseif($category == 'FARMER') {
+            elseif($_SESSION['Category']== 'FARMER') {
+                header("location: farmer.php");
+            }else {
                 header("location: error.php");
             }
-            header("location: profile.php");
-
-               
-        
         }
         else
         {
