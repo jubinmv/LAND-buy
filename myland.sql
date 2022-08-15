@@ -49,6 +49,7 @@ ALTER TABLE `user`
 
 CREATE TABLE `logins` (
   `lid` int(255) NOT NULL,
+  `urefid` int(255) NOT NULL, -- reference id for user table
   `lpass` varchar(255) NOT NULL,
   `lemail` varchar(255) NOT NULL,
   `lcategory` varchar(255) NOT NULL

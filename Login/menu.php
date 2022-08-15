@@ -1,4 +1,6 @@
 <?php
+$text = '';
+$textLink = '';
 	if(isset($_SESSION['logged_in']) AND $_SESSION['logged_in'] == 1)
 	{
 		$loginProfile = "My Profile: ". $_SESSION['Username'];
@@ -25,7 +27,7 @@
 				<nav id="nav">
 					<ul>
 						<li><a href="../index.php"> Home</a></li>
-						<li><span class="<?php echo $logo; ?>"></span><?php echo" ". $loginProfile; ?></a></li>
+						<li><a><span class="<?php echo $logo; ?>"></span><?php echo" ". $loginProfile; ?></a></li>
 						
 					</ul>
 				</nav>

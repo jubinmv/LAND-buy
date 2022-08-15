@@ -1142,3 +1142,7 @@ padding: 2em;
 .mt-2 {
 	margin-top: 2em !important;
 }
+
+.text-center {
+	text-align: center;
+}
