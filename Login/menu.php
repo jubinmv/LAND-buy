@@ -25,9 +25,8 @@
 				<nav id="nav">
 					<ul>
 						<li><a href="../index.php"> Home</a></li>
-						<li><a href="../about.php"> About</a></li>
 						<li><span class="<?php echo $logo; ?>"></span><?php echo" ". $loginProfile; ?></a></li>
-						<!-- <li><a href="../contact.php"> contact</a></li> -->
+						
 					</ul>
 				</nav>
 			</header>
