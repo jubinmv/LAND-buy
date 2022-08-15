@@ -83,7 +83,7 @@
                     <?php if($_SESSION['Category'] == 'ADMIN'): ?>
                     <div class="row uniform">
                         <div class="6u 12u$(xsmall)">
-                            <a href=../viewland.php class="button special">View Land</a>
+                            <a href=../viewland.php class="button special">View Users</a>
                         </div>
 
                     </div>

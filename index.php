@@ -63,14 +63,7 @@
 							<i class="icon big rounded fa-clock-o"></i>
 							<p>About</p>
 						</section>
-						<!-- <section class="4u 12u$(small)">
-							<i class="icon big rounded fa-comments"></i>
-							<p>Contact</p> -->
-						</section>
-						<section class="4u$ 12u$(small)">
-							<i class="icon big rounded fa-user"></i>
-							<p>Register with us</p>
-						</section>
+
 					</div>
 				</div>
 			</section>
@@ -139,23 +132,6 @@
 										<input type="password" name="pass" id="pass" value="" placeholder="Password" class="w-100" required/>
 									</div>
 								</div>
-									<!-- <div class="row uniform w-100">
-										<p>
-				                            <b>User Type : </b>
-				                        </p>
-				                        <div class="3u 12u$(small)">
-				                            <input type="radio" id="admin" name="category" value="ADMIN">
-				                            <label for="admin">Admin</label>
-				                        </div>
-				                        <div class="3u 12u$(small)">
-				                            <input type="radio" id="landowner" name="category" value="LAND_OWNER">
-				                            <label for="landowner">Landowner</label>
-				                        </div>
-										<div class="3u 12u$(small)">
-				                            <input type="radio" id="farmer" name="category" value="FARMER">
-				                            <label for="farmer">Farmer</label>
-				                        </div>
-									</div> -->
 									<div class="row uniform w-50 mt-2 ml-0">											
 										<div class="7u 12u$(small) w-100 pa-0">
 											<input type="submit" value="Login" class="w-100" />
@@ -204,10 +180,10 @@
 						<b>Gender : </b>
 					</p>
 					<div class="3u 12u$(small)">
-						<input type="radio" name="gender" id="gender1"><label for="gender1">Male</label>
+						<input type="radio" name="gender" id="gender1" value="MALE"><label for="gender1">Male</label>
 					</div>
 					<div class="3u 12u$(small)">
-						<input type="radio" name="gender" id="gender2"><label for="gender2">Female</label>
+						<input type="radio" name="gender" id="gender2"  value="MALE"><label for="gender2">Female</label>
 					</div>
 			</div>
 			<div class="row uniform w-100 ma-0">
@@ -227,17 +203,14 @@
 				<p>
 					<b>User Type : </b>
 				</p>
+			
 				<div class="3u 12u$(small) w-100">
-					<input type="radio" id="admin1" name="category1" value="ADMIN" >
-					<label for="admin1">Admin</label>
+					<input type="radio" id="farmer1" name="category1" value="FARMER" >
+					<label for="farmer1">Farmer</label>
 				</div>
 				<div class="3u 12u$(small) w-100">
 					<input type="radio" id="landowner1" name="category1" value="LAND_OWNER">
 					<label for="landowner1">Landowner</label>
-				</div>
-				<div class="3u 12u$(small) w-100">
-					<input type="radio" id="farmer1" name="category1" value="FARMER">
-					<label for="farmer1">Farmer</label>
 				</div>
 			</div>
 			<div class="row uniform w-100 ma-0">

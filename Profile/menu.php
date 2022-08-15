@@ -31,8 +31,12 @@
                 <ul class="links">
                     <li><a href="<?php echo $link; ?>"><?php echo $loginProfile; ?></a></li>
                     <li><a href="index.php">Home</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="forum.html">Forum</a></li>
+                    <li><a href="boardMembers.html">Board Members</a></li>
                     <li><a href="">About Us</a></li>
-                    <!-- <li><a href="#footer">Contact Us</a></li> -->
+                    <li><a href="#footer">Contact Us</a></li>
                 </ul>
             </nav>
 </body>
