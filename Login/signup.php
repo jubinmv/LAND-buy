@@ -32,7 +32,21 @@ VALUES ('$name','$uname','$pass','$mobile','$email','$gender','$addr', '$categor
 if($conn->query($sql) === TRUE)
 
 {
-    $sql1 = "INSERT INTO logins(lpass, lemail, lcategory) VALUES('$pass', '$email', '$category')";
+
+    $sql2 = "SELECT * from user WHERE email='$email'";
+    $result = mysqli_query($conn, $sql2);
+    $num_rows = mysqli_num_rows($result);
+
+    if($num_rows == 0)
+    {
+        $_SESSION['message'] = "Oops! Something went wrong.";
+        header("location: error.php");
+    }
+    else
+    {
+        $User = $result->fetch_assoc();
+        $id = $User['id'];
+        $sql1 = "INSERT INTO logins(urefid, lpass, lemail, lcategory) VALUES('$id','$pass', '$email', '$category')";
     if($conn->query($sql1) === TRUE)
     {
         echo "Successful inserted login";
@@ -43,6 +57,8 @@ if($conn->query($sql) === TRUE)
    }
    
    header("location: proceedtologin.php");
+    }
+    
 }
 
 function dataFilter($data)

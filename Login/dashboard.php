@@ -61,7 +61,7 @@ session_start();
      
       </li>
       <li>
-        <a href="users.php">View Users</a>
+        <a href="dashboard.php?page=users">View Users</a>
       </li>
       <li>
         <a href="registeredlandowner.php">Manage Landowners</a>
@@ -83,6 +83,48 @@ session_start();
   </nav>
   
 	<!-- Component End  -->
+
+  <!-- View Users -->
+  <div class="w-100 pa-2">
+            <div>
+            
+<?php
+ require '../db.php';
+ 
+$sql = "SELECT * from user where category NOT IN('ADMIN')";
+$result = $conn->query($sql);
+?>
+ <br> <br>
+ <h1 id="h1" class="text-center">Users Detail</h1><br>
+ <table>
+
+  <tr>
+     <th>NAME</th>
+     <th>PHONE</th>
+     <th>EMAIL</th>
+     <th>ADDRESS</th>
+     <th>GENDER</th>
+     <th>CATEGORY</th>
+  </tr>
+ <?php
+ if ($result !== false && $result->num_rows > 0){
+
+  while($row = $result->fetch_assoc()) {
+ ?>
+  <tr>
+ <td><?php echo $row['name'] ?></td>
+<td><?php echo $row['mobile'] ?></td>
+<td><?php echo $row['email'] ?></td>
+<td><?php echo $row['address'] ?></td>
+<td><?php echo $row['gender'] ?></td>
+<td><?php echo $row['category'] ?></td>
+  </tr>
+  <?php
+ }
+}
+  ?>
+    </div>
+  <!-- View Users -->
 </div>
 
     		<script src="../assets/js/jquery.min.js"></script>

@@ -41,7 +41,7 @@
 <?php
  require '../db.php';
  
-$sql = "SELECT * from user";
+$sql = "SELECT * from user where category NOT IN('ADMIN')";
 $result = $conn->query($sql);
 ?>
  <br> <br> <br>

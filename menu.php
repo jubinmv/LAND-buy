@@ -20,7 +20,7 @@
 				<nav id="nav">
 					<ul>
 						<li><a href="index.php"> Home</a></li>
-						<!-- <li><a href="../about.php"> About</a></li> -->
+						<li><a href="../about.php"> About</a></li>
 						<li><a href="<?= $link; ?>"><?php echo" ". $loginProfile; ?></a></li>
 							</ul>
 				</nav>
