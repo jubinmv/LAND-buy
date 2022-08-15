@@ -11,32 +11,6 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `myland`
-
--- --
--- -- Table structure for table `landowner`
--- --
-
--- CREATE TABLE `landowner` (
---   `bid` int(100) NOT NULL,
---   `bname` varchar(100) NOT NULL,
---   `busername` varchar(100) NOT NULL,
---   `bpassword` varchar(100) NOT NULL,
---   `bhash` varchar(100) NOT NULL,
---   `bemail` varchar(100) NOT NULL,
---   `bgender` varchar(100) NOT NULL,
---   `bmobile` varchar(100) NOT NULL,
---   `baddress` text NOT NULL,
---   `bactive` int(100) NOT NULL DEFAULT '0',
---   `picExt` varchar(255) NOT NULL DEFAULT 'profile0',
---   `picStatus` int(10) NOT NULL DEFAULT '0'
--- ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- -- --------------------------------------------------------
 
@@ -61,20 +35,11 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
--- Indexes for dumped tables
 --
--- -- Indexes for table `landowner`
--- --
--- ALTER TABLE `landowner`
---   ADD PRIMARY KEY (`bid`),
---   ADD UNIQUE KEY `bid` (`bid`);
-
---
--- Indexes for table `farmer`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id` (`id`);
+  ADD PRIMARY KEY (`id`);
 
 -- --
 -- AUTO_INCREMENT for table `user`
@@ -82,3 +47,20 @@ ALTER TABLE `user`
 ALTER TABLE `user`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
+CREATE TABLE `logins` (
+  `lid` int(255) NOT NULL,
+  `lpass` varchar(255) NOT NULL,
+  `lemail` varchar(255) NOT NULL,
+  `lcategory` varchar(255) NOT NULL
+  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  --
+-- Indexes for table `user`
+--
+ALTER TABLE `logins`
+  ADD PRIMARY KEY (`lid`);
+
+-- --
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `logins`
+  MODIFY `lid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;

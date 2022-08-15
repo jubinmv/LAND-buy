@@ -6,7 +6,7 @@
 
     require '../db.php';
 
-    $sql = "SELECT * FROM user WHERE email='$user'";
+    $sql = "SELECT * FROM logins WHERE lemail='$user'";
     $result = mysqli_query($conn, $sql);
     $num_rows = mysqli_num_rows($result);
 
@@ -19,33 +19,34 @@
     {
         $User = $result->fetch_assoc();
 
-        if (password_verify($_POST['pass'], $User['password']))
+        if (password_verify($_POST['pass'], $User['lpass']))
         {
             $_SESSION['id'] = $User['id'];
+            $_SESSION['Category'] = $User['lcategory'];
             $_SESSION['Hash'] = $User['hash'];
-            $_SESSION['Password'] = $User['password'];
-            $_SESSION['Email'] = $User['email'];
-            $_SESSION['Name'] = $User['name'];
-            $_SESSION['Username'] = $User['username'];
-            $_SESSION['Mobile'] = $User['mobile'];
-            $_SESSION['Addr'] = $User['address'];
-            $_SESSION['Active'] = $User['active'];
-            $_SESSION['picStatus'] = $User['picStatus'];
-            $_SESSION['picExt'] = $User['picExt'];
-            $_SESSION['logged_in'] = true;
-            $_SESSION['Category'] = $User['category'];
-            // error_log('category', $_SESSION['Category']);
+            $_SESSION['Password'] = $User['lpass'];
+            $_SESSION['Email'] = $User['lemail'];
+            // $_SESSION['Name'] = $User['name'];
+            // $_SESSION['Username'] = $User['username'];
+            // $_SESSION['Mobile'] = $User['mobile'];
+            // $_SESSION['Addr'] = $User['address'];
+            // $_SESSION['Active'] = $User['active'];
+            // $_SESSION['picStatus'] = $User['picStatus'];
+            // $_SESSION['picExt'] = $User['picExt'];
+            // $_SESSION['logged_in'] = true;
+            
+            // // error_log('category', $_SESSION['Category']);
 
-            if($_SESSION['picStatus'] == 0)
-            {
-                $_SESSION['picId'] = 0;
-                $_SESSION['picName'] = "profile0.png";
-            }
-            else
-            {
-                $_SESSION['picId'] = $_SESSION['id'];
-                $_SESSION['picName'] = "profile".$_SESSION['picId'].".".$_SESSION['picExt'];
-            }
+            // if($_SESSION['picStatus'] == 0)
+            // {
+            //     $_SESSION['picId'] = 0;
+            //     $_SESSION['picName'] = "profile0.png";
+            // }
+            // else
+            // {
+            //     $_SESSION['picId'] = $_SESSION['id'];
+            //     $_SESSION['picName'] = "profile".$_SESSION['picId'].".".$_SESSION['picExt'];
+            // }
             //echo $_SESSION['Email']."  ".$_SESSION['Name'];
             
 

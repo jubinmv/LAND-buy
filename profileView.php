@@ -53,11 +53,6 @@
                 </center>
                 </header>
                     <div class="row">
-                        <div class="col-sm-3"></div>
-                        <div class="col-sm-3">
-                            <b><font size="+1" color="black">RATINGS : </font></b>
-                            <font size="+1"><?php echo $_SESSION['Rating'];?></font>
-                        </div>
                         <div class="col-sm-3">
                             <b><font size="+1" color="black">Email ID : </font></b>
                             <font size="+1"><?php echo $_SESSION['Email'];?></font>
@@ -87,7 +82,7 @@
                                         <a href="profileEdit.php" class="btn btn-danger" style="text-decoration: none;">Edit Profile</a>
                                     </div>
                                     <div class="3u 12u$(xsmall)">
-            							<a href="viewland.php" class="btn btn-danger" style="text-decoration: none;">view land</a>
+            							<a href="viewland.php" class="btn btn-danger" style="text-decoration: none;">View</a>
             						</div>
                                     <div class="3u 12u$(large)">
                                         <a href="Login/logout.php" class="btn btn-danger" style="text-decoration: none;">LOG OUT</a>

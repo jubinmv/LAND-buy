@@ -13,7 +13,7 @@
         $newHash = dataFilter( md5( rand(0,1000) ) );
     }
 
-    $sql = "SELECT * FROM users WHERE email='$user'";
+    $sql = "SELECT * FROM members WHERE Username='$user'";
     $result = mysqli_query($conn, $sql);
     $num_rows = mysqli_num_rows($result);
 
@@ -33,7 +33,7 @@
             {
                 $conNewPass = dataFilter(password_hash($_POST['conNewPass'], PASSWORD_BCRYPT));
                 $currHash = $_SESSION['Hash'];
-                $sql = "UPDATE users SET Password='$conNewPass', Hash='$newHash' WHERE Hash='$currHash';";
+                $sql = "UPDATE members SET Password='$conNewPass', Hash='$newHash' WHERE Hash='$currHash';";
 
                 $result = mysqli_query($conn, $sql);
 
