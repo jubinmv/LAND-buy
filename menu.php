@@ -16,12 +16,14 @@
 
 <!DOCTYPE html>
 			<header id="header">
-				<h1><a href="index.php">Farmland Divination</a></h1>
+				<h1>Farmland Divination</h1>
 				<nav id="nav">
 					<ul>
 						<li><a href="index.php"> Home</a></li>
-						<li><a href="../about.php"> About</a></li>
-						<li><a href="<?= $link; ?>"><?php echo" ". $loginProfile; ?></a></li>
+						<li><a href="about.php">About</a></li>
+						<li><a href="landss.php">Lands</a></li>
+						<li><?php echo" ". $loginProfile; ?></li>
+						
 							</ul>
 				</nav>
 			</header>

@@ -1,6 +1,5 @@
 <?php
-$text = '';
-$textLink = '';
+
 	if(isset($_SESSION['logged_in']) AND $_SESSION['logged_in'] == 1)
 	{
 		$loginProfile = "My Profile: ". $_SESSION['Username'];
@@ -23,7 +22,7 @@ $textLink = '';
 
 <!DOCTYPE html>
 			<header id="header">
-				<h1><a href="index.php">Farmland Divination</a></h1>
+				<h1>Farmland Divination</h1>
 				<nav id="nav">
 					<ul>
 						<li><a href="../index.php"> Home</a></li>

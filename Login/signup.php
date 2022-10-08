@@ -56,6 +56,8 @@ if($conn->query($sql) === TRUE)
         echo "Insertion failed in login";
    }
    
+
+//$check = mail( $to, $subject, $message_body );
    header("location: proceedtologin.php");
     }
     

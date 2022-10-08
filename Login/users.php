@@ -1,3 +1,21 @@
+<?php
+session_start();
+    if ( $_SESSION['logged_in'] != 1 )
+    {
+      $_SESSION['message'] = "You must log in before viewing your profile page!";
+      header("location: error.php");
+    }
+    else
+    {
+
+       $email =  $_SESSION['Email'];
+       $name =  $_SESSION['Name'];
+       $user =  $_SESSION['Username'];
+       $mobile = $_SESSION['Mobile'];
+       $active = $_SESSION['Active'];
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -22,29 +40,54 @@
     </head>
 
 	<body>
-	   <?php
-            
-            require 'dashboard.php';
+  <?php
+            require 'adminheader.php';
         ?>
-	    
-    		<script src="../assets/js/jquery.min.js"></script>
-            <script src="../assets/js/jquery.scrolly.min.js"></script>
-            <script src="../assets/js/jquery.scrollex.min.js"></script>
-            <script src="../assets/js/skel.min.js"></script>
-            <script src="../assets/js/util.js"></script>
-            <script src="../assets/js/main.js"></script>
-	</body>
-</html>
- <div>
-            <div>
-            <h1 id="h1">Users Detail</h1><br>
+        <div class="wrapper">
+  <!-- Sidebar Holder -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <h3 class="dashboard-title-text ma-0">Admin Dashboard</h3>
+    </div>
+
+    <ul class="list-unstyled components">
+     
+      </li>
+      <li>
+        <a href="dashboard.php">Home</a>
+      </li>
+      <li>
+        <a href="users.php">View Users</a>
+      </li>
+      <li>
+        <a href="addcrop.php">Add Crop</a>
+      </li>
+      <li>
+        <a href="registeredlandowner.php">Manage Landowners</a>
+      </li>
+      <li>
+        <a href="registeredfarmer.php">Manage farmers</a>
+      </li>
+      <li>
+        <a href="notifications.php ">Notifications</a>
+      </li>
+    </ul>
+
+    <ul class="list-unstyled CTAs ma-0">
+      <li><a href="../profileView.php" class="article">View Profile</a></li>
+    </ul>
+    <ul class="list-unstyled CTAs">
+      <li><a href="../Login/logout.php" class="article">Logout</a></li>
+    </ul>
+  </nav>
+  <div>
+            <h1 id="h1" class="ma-2 text-center fw-800">Users Detail</h1><br>
 <?php
  require '../db.php';
  
 $sql = "SELECT * from user where category NOT IN('ADMIN')";
 $result = $conn->query($sql);
 ?>
- <br> <br> <br>
  <table style="margin-left:20px;">
 
   <tr>
@@ -73,4 +116,15 @@ $result = $conn->query($sql);
 }
   ?>
     </div>
+
+</div>
+	    
+    		<script src="../assets/js/jquery.min.js"></script>
+            <script src="../assets/js/jquery.scrolly.min.js"></script>
+            <script src="../assets/js/jquery.scrollex.min.js"></script>
+            <script src="../assets/js/skel.min.js"></script>
+            <script src="../assets/js/util.js"></script>
+            <script src="../assets/js/main.js"></script>
+	</body>
+</html>
         

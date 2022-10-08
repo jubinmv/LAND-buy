@@ -41,7 +41,7 @@
 
     <body>
         <?php
-            require 'menu.php';
+            require 'adminheader.php';
         ?>
 
         <section id="banner" class="wrapper">
@@ -72,23 +72,13 @@
                   <p><?= $email ?></p>
 
                  
-                    <div class="row uniform">
-                        <div class="6u 12u$(xsmall)">
-                            <a href=../profileView.php class="button special">My Profile</a>
-                        </div>
+                   
                         <div class="6u 12u$(xsmall)">
                             <a href="logout.php" class="button special">LOG OUT</a>
                         </div>
-                    </div>
-                    <?php if($_SESSION['Category'] == 'ADMIN'): ?>
-                    <div class="row uniform">
-                        <div class="6u 12u$(xsmall)">
-                            <a href=../viewland.php class="button special">View Users</a>
-                        </div>
+                   
 
-                    </div>
-
-                <?php endif; ?>
+               
 
 
     </body>

@@ -14,46 +14,59 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="bootstrap\js\bootstrap.min.js"></script>
         <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/style-xlarge.css" />
+		<link rel="stylesheet" href="../css/dashboard-style.css" />
     </head>
 
     <body class="subpage">
 
         <?php
-            require 'menu.php';
+            require './Login/adminheader.php';
         ?>
 
         <section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
-            <div class="inner">
+            <div class="text-center">
                 <div class="box">
                 <header>
-                    <span class="image left"><img src="<?php echo 'images/profileImages/'.$_SESSION['picName'].'?'.mt_rand(); ?>" class="img-circle" class="img-responsive" height="200px"></span>
+                    <span class="text-center"><img src="<?php echo 'images/profileImages/'.$_SESSION['picName'].'?'.mt_rand(); ?>" class="img-circle" class="text-center" height="200px"></span>
                     <br>
                     <h2><?php echo $_SESSION['Name'];?></h2>
+                    <br>
+                    <br>
                     <h4><?php echo $_SESSION['Username'];?></h4>
                     <br>
+                    <div class="col-lg-12 col-md-12 mt-2 text-center">
                     <form method="post" action="Profile/updatePic.php" enctype="multipart/form-data">
-                        <input type="file" name="profilePic" id="profilePic">
+                        <input type="file" name="profilePic" id="profilePic" >
                         <br>
+                    </div>
                         <div class="12u$">
                             <input type="submit" class="button special small" name="upload" value="Upload" />
                             <input type="submit" class="button special small" name="remove" value="Remove" />
                         </div>
                     </form>
                 </header>
+                <br>
                 <form method="post" action="Profile/updateProfile.php">
                     <div class="row uniform">
                         <div class="8u 12u$(xsmall)">
                             <input type="text" name="name" id="name" value="<?php echo $_SESSION['Name'];?>" placeholder="Full Name" required />
                         </div>
-                        <div class="4u 12u$(xsmall)">
-                            <input type="text" name="mobile" id="mobile" value="<?php echo $_SESSION['MobileNo'];?>" placeholder="Mobile No" required/>
-                        </div>
+                        <br>
                         <div class="6u 12u$(xsmall)">
                             <input type="text" name="uname" id="uname" value="<?php echo $_SESSION['Username'];?>" placeholder="Username" required/>
                         </div>
+                        <br>
                         <div class="6u 12u$(xsmall)">
                             <input type="email" name="email" id="email" value="<?php echo $_SESSION['Email'];?>" placeholder="Email" required/>
                         </div>
+                        <br>
+
+                        <div class="col-lg-12 col-md-12 mt-2 text-center">
+                <button type="submit" class="btn btn-primary" name="submit">Update</button>
+            </div>
+                        <br>
                 </form>
                 </div>
             </div>

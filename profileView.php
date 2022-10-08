@@ -8,102 +8,81 @@
 	}
 ?>
 
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./css/style.css" />
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
 
-<html lang="en">
-    <head>
-        <title>Profile: <?php echo $_SESSION['Username']; ?></title>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link href="bootstrap\css\bootstrap.min.css" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="bootstrap\js\bootstrap.min.js"></script>
-        <meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="login.css"/>
-		<script src="js/jquery.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-layers.min.js"></script>
-		<script src="js/init.js"></script>
-		<link rel="stylesheet" href="css/skel.css" />
-		<link rel="stylesheet" href="css/style.css" />
-		<link rel="stylesheet" href="css/style-xlarge.css" />
+.title {
+  color: grey;
+  font-size: 18px;
+}
 
-    </head>
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
 
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
 
-    <body>
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+</head>
+<body>
 
-        <?php
-            require 'menu.php';
-        ?>
+<h2 style="text-align:center">User Profile</h2>
 
-        <section id="one" class="wrapper style1 align">
-            <div class="inner">
-                <div class="box">
-                <header>
-                    <center>
-                    <span><img src="<?php echo 'images/profileImages/'.$_SESSION['picName'].'?'.mt_rand(); ?>" class="image-circle" class="img-responsive" height="200%"></span>
-                    <br>
-                    <h2><?php echo $_SESSION['Name'];?></h2>
-                    <h4 style="color: black;"><?php echo $_SESSION['Username'];?></h4>
-                    <br>
-                </center>
-                </header>
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <b><font size="+1" color="black">Email ID : </font></b>
-                            <font size="+1"><?php echo $_SESSION['Email'];?></font>
-                        </div>
-                        <div class="col-sm-3"></div>
-                    </div>
-                    <br />
-                    <div class="row">
-                        <div class="col-sm-3"></div>
-                        <div class="col-sm-3">
-                            <b><font size="+1" color="black">Mobile No : </font></b>
-                            <font size="+1"><?php echo $_SESSION['Mobile'];?></font>
-                        </div>
-                        <div class="col-sm-3">
-                            <b><font size="+1" color="black">ADDRESS : </font></b>
-                            <font size="+1"><?php echo $_SESSION['Addr'];?></font>
-                        </div>
-                        <div class="col-sm-3"></div>
-                    </div>
-                        <div class="12u$">
-                            <center>
-                                <div class="row uniform">
-                                    <div class="3u 12u$(large)">
-                                        <a href="changePassPage.php" class="btn btn-danger" style="text-decoration: none;">Change Password</a>
-                                    </div>
-                                    <div class="3u 12u$(large)">
-                                        <a href="profileEdit.php" class="btn btn-danger" style="text-decoration: none;">Edit Profile</a>
-                                    </div>
-                                    <div class="3u 12u$(xsmall)">
-            							<a href="viewland.php" class="btn btn-danger" style="text-decoration: none;">View</a>
-            						</div>
-                                    <div class="3u 12u$(large)">
-                                        <a href="Login/logout.php" class="btn btn-danger" style="text-decoration: none;">LOG OUT</a>
-                                    </div>
-                                </div>
-                            </center>
-                        </div>
-                    </div>
-                </div>
+<div class="card w-50 max-w-50">
+  <img src="<?php echo 'images/profileImages/'.$_SESSION['picName'].'?'.mt_rand(); ?>" alt="John" class="w-50 mt-2">
+  <h1><?php echo $_SESSION['Email'];?></h1>
+  <p class="title"><?php echo $_SESSION['Mobile'];?></p>
+  <p><?php echo $_SESSION['Addr'];?></p>
+  <div class="container">
+    <div class="row w-100">
+        <div style="float: left" class="w-50">
+        <a href="changepassword.php" style="color:blue">Change Password</a>
+        </div>
+        <div style="float: right" class="w-50">
+            <a href="profileEdit.php" style="color:blue">Edit Profile</a>
             </div>
-        </section>
-
-        <!-- Scripts -->
-            <script src="assets/js/jquery.min.js"></script>
-            <script src="assets/js/jquery.scrolly.min.js"></script>
-            <script src="assets/js/jquery.scrollex.min.js"></script>
-            <script src="assets/js/skel.min.js"></script>
-            <script src="assets/js/util.js"></script>
-            <script src="assets/js/main.js"></script>
-
-
-
-    </body>
+        </div>
+    
+    <div class="row w-100 mt-2">
+        <div>
+         <a href="Login/logout.php" style="color:blue">LOG OUT</a>
+        </div>
+    </div>
+  </div>
+  <!-- <div style="margin: 24px 0;">
+    <a href="#"><i class="fa fa-dribbble"></i></a> 
+    <a href="#"><i class="fa fa-twitter"></i></a>  
+    <a href="#"><i class="fa fa-linkedin"></i></a>  
+    <a href="#"><i class="fa fa-facebook"></i></a> 
+  </div>
+  <p><button>Contact</button></p> -->
+</div>
+</body>
 </html>

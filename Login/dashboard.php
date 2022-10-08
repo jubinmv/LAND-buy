@@ -37,11 +37,61 @@ session_start();
 		<link rel="stylesheet" href="../css/style.css" />
 		<link rel="stylesheet" href="../css/style-xlarge.css" />
 		<link rel="stylesheet" href="../css/dashboard-style.css" />
+    <style>
+.order-card {
+    color: #fff;
+}
+
+.bg-c-blue {
+    background: linear-gradient(45deg,#4099ff,#73b4ff);
+}
+
+.bg-c-green {
+    background: linear-gradient(45deg,#2ed8b6,#59e0c5);
+}
+
+.bg-c-yellow {
+    background: linear-gradient(45deg,#FFB64D,#ffcb80);
+}
+
+.bg-c-pink {
+    background: linear-gradient(45deg,#FF5370,#ff869a);
+}
+
+
+.card .card-block {
+   
+    padding: 25px;
+}
+
+.order-card i {
+    font-size: 20px;
+}
+
+.f-left {
+    float: left;
+}
+
+.f-right {
+    float: right;
+}
+
+.cardb {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    border: none;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+    </style>
+    
     </head>
 
 	<body>
 	   <?php
-            require 'menu.php';
+            require 'adminheader.php';
         ?>
 	    <!-- <section id="banner">
 			<div class="container"> -->
@@ -51,17 +101,19 @@ session_start();
   <nav id="sidebar">
     <div class="sidebar-header">
       <h3 class="dashboard-title-text ma-0">Admin Dashboard</h3>
-      
-
-
-</table>
     </div>
 
     <ul class="list-unstyled components">
      
       </li>
       <li>
-        <a href="dashboard.php?page=users">View Users</a>
+        <a href="dashboard.php">Home</a>
+      </li>
+      <li>
+        <a href="users.php">View Users</a>
+      </li>
+      <li>
+        <a href="postcrop.php">Add Crop</a>
       </li>
       <li>
         <a href="registeredlandowner.php">Manage Landowners</a>
@@ -70,12 +122,12 @@ session_start();
         <a href="registeredfarmer.php">Manage farmers</a>
       </li>
       <li>
-        <a href="#">Notifications</a>
+        <a href="notifications.php ">Notifications</a>
       </li>
     </ul>
 
     <ul class="list-unstyled CTAs ma-0">
-      <li><a href="../Login/profile.php" class="article">View Profile</a></li>
+      <li><a href="../profileView.php" class="article">View Profile</a></li>
     </ul>
     <ul class="list-unstyled CTAs">
       <li><a href="../Login/logout.php" class="article">Logout</a></li>
@@ -86,47 +138,75 @@ session_start();
 
   <!-- View Users -->
   <div class="w-100 pa-2">
-            <div>
-            
-<?php
- require '../db.php';
- 
-$sql = "SELECT * from user where category NOT IN('ADMIN')";
-$result = $conn->query($sql);
-?>
- <br> <br>
- <h1 id="h1" class="text-center">Users Detail</h1><br>
- <table>
-
-  <tr>
-     <th>NAME</th>
-     <th>PHONE</th>
-     <th>EMAIL</th>
-     <th>ADDRESS</th>
-     <th>GENDER</th>
-     <th>CATEGORY</th>
-  </tr>
- <?php
- if ($result !== false && $result->num_rows > 0){
-
-  while($row = $result->fetch_assoc()) {
- ?>
-  <tr>
- <td><?php echo $row['name'] ?></td>
-<td><?php echo $row['mobile'] ?></td>
-<td><?php echo $row['email'] ?></td>
-<td><?php echo $row['address'] ?></td>
-<td><?php echo $row['gender'] ?></td>
-<td><?php echo $row['category'] ?></td>
-  </tr>
-  <?php
- }
-}
-  ?>
-    </div>
-  <!-- View Users -->
-</div>
-
+  <div class='container'>
+                            <div class='card'>
+                                <div class='card-header'>
+                                    <h1 class="text-center fw-800">Administrator Page</h1>
+                                </div>
+                            </div>
+                            
+                    <div class="row mt-2">
+                        <div class="col-md-4 col-xl-3">
+                            <div class="cardb bg-c-blue order-card">
+                                <div class="card-block">
+                                <h6 class="pt-2 text-center">Number of user`    s</h6>
+                                <h2 class="text-center ms-3">
+                                <?php
+                                  require '../db.php';
+                                  
+                                  $sql = "SELECT * from user where category NOT IN('ADMIN')";
+                                  $result = $conn->query($sql);
+                                  echo $result->num_rows
+                                  ?>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="col-md-4 col-xl-3">
+                        <div class="cardb bg-c-green order-card">
+                            <div class="card-block">
+                                <h6 class="pt-2 text-center">Number of farmers</h6>
+                                <h2 class="text-center ms-3">
+                                  <?php
+                                  require '../db.php';
+                                  
+                                  $sql = "SELECT * from user where category IN('FARMER')";
+                                  $result = $conn->query($sql);
+                                  echo $result->num_rows
+                                  ?>
+                                
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xl-3">
+                        <div class="cardb bg-c-green order-card">
+                            <div class="card-block">
+                                <h6 class="pt-2 text-center">Number of landowners</h6>
+                                <h2 class="text-center ms-3">
+                                  <?php
+                                  require '../db.php';
+                                  
+                                  $sql = "SELECT * from user where category IN('LAND_OWNER')";
+                                  $result = $conn->query($sql);
+                                  echo $result->num_rows
+                                  ?>
+                                
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+  </div>
+          
     		<script src="../assets/js/jquery.min.js"></script>
             <script src="../assets/js/jquery.scrolly.min.js"></script>
             <script src="../assets/js/jquery.scrollex.min.js"></script>
