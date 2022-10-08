@@ -33,8 +33,9 @@
 		<!-- Banner -->
 			<section id="banner" class="wrapper">
 				<div class="container">
-				<h2>Farmland Divination</h2>
-				<p>Your Land Our Market</p>
+				<p>Welcome to Farmland Divination, India's First Agri Land Marketplace.
+A liquidity platform to lease agricultural lands, small farms and estate lands.
+The simplest way to make the lands more productive .</p>
 				<br><br>
 				<center>
 					<div class="row uniform">
@@ -60,6 +61,7 @@
 					</header>
 					<div class="row 200%">
 						<section class="4u 12u$(small)">
+						
 							<i class="icon big rounded fa-clock-o"></i>
 							<p>About</p>
 						</section>
@@ -72,7 +74,7 @@
 		<!-- Footer -->
 		<footer class="footer-distributed" style="background-color:black" id="aboutUs">
 		<center>
-			<h1 style="font: 35px calibri;">About Us</h1>
+			<h1 style="font: 35px calibri;">Contact Us</h1>
 		</center>
 		<div class="footer-left">
 			<h3 style="font-family: 'Times New Roman', cursive;">Farmland Divination </h3>
@@ -87,15 +89,17 @@
 		<div class="footer-center">
 			<div>
 				<i class="fa fa-map-marker"></i>
-				<p style="font-size:20px">Farmland<span>Vormir</span></p>
+				<p style="font-size:20px">Farmland<span>Kottayam</span></p>
 			</div>
 			<div>
 				<i class="fa fa-phone"></i>
-				<p style="font-size:20px">123456789</p>
+				<p style="font-size:20px">7559070422
+			
+			</p>
 			</div>
 			<div>
 				<i class="fa fa-envelope"></i>
-				<p style="font-size:20px"><a href="mailto:farmland@gmail.com" style="color:white">demo@demo.com</a></p>
+				<p style="font-size:20px"><a href="mailto:farmland@gmail.com" style="color:white">jubinmvarughese007@gmail.com</a></p>
 			</div>
 		</div>
 
@@ -160,15 +164,16 @@
 		<h3>SignUp</h3>
 			<div class="row uniform w-100 ma-0">
 				<div class="3u 12u$(xsmall) w-100">
-					<input type="text" name="name" id="name" value="" placeholder="Name" required/>
+					<input type="text" name="name" id="name" value="" placeholder="Name" required  pattern="[A-Za-z]{3,}"/>
+					
 				</div>
 				<div class="3u 12u$(xsmall) w-100">
-					<input type="text" name="uname" id="uname" value="" placeholder="UserName" required/>
+					<input type="text" name="uname" id="uname" value="" placeholder="UserName" required pattern="[A-Za-z]{3,}"/>
 				</div>
 			</div>
 			<div class="row uniform w-100 ma-0">
 				<div class="3u 12u$(xsmall) w-100">
-					<input type="text" name="mobile" id="mobile" value="" placeholder="Mobile Number" required/>
+					<input type="text" name="mobile" id="mobile" value="" placeholder="Mobile Number" required pattern="[0-9]{10}"/>
 				</div>
 
 				<div class="3u 12u$(xsmall) w-100">
@@ -188,10 +193,10 @@
 			</div>
 			<div class="row uniform w-100 ma-0">
 				<div class="3u 12u$(xsmall) w-100">
-					<input type="password" name="password" id="password" value="" placeholder="Password" required/>
+					<input type="password" name="password" id="password" value="" placeholder="Password" required  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{3,}/>
 				</div>
 				<div class="3u 12u$(xsmall) w-100">
-					<input type="password" name="pass" id="pass" value="" placeholder="Retype Password" required/>
+					<input type="password" name="pass" id="pass" value="" placeholder="Retype Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{3,}/>
 				</div>
 			</div>
 			<div class="row uniform w-100 ma-0">

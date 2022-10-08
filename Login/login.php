@@ -19,6 +19,7 @@
     {
         $User = $result->fetch_assoc();
         $id = $User['urefid'];
+        $lstatus = $User['lstatus'];
 
         if (password_verify($_POST['pass'], $User['lpass']))
         {
@@ -29,6 +30,9 @@
             if($num_rows == 0)
             {
                 $_SESSION['message'] = "Oops! Something went wrong.";
+                header("location: error.php");
+            } else if ($lstatus == 1) {
+                $_SESSION['message'] = "You are blocked.";
                 header("location: error.php");
             }
             else

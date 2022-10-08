@@ -40,12 +40,123 @@ session_start();
 
 	<body>
 	   <?php
-            require 'menu.php';
+            require 'landownermenu.php';
         ?>
-        <div>
-            <h1 style="text-align: center; font-size: 2em; margin: auto; padding-top: 50px">Hi, Farmer</h1>
-        </div>
+        <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="indexfooter.css" />
 
+	
+
+<style>
+  
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+</style>
+</head>
+<body>
+
+<h2 class="mt-2"><center>Welcome to Farmland Divination, India's First Agri Land Marketplace.</center></h2>
+<p><center>A liquidity platform to lease agricultural lands, small farms and estate lands.
+The simplest way to make the agricultural lands more productive</center></p>
+<br>
+<div class="row w-90 ma-auto">
+  <div class="column pa-1  mb-0">
+    <div class="card pa-2">
+    <div class="land-img">
+     <img src="../images/5.jpg" class="w-100 h-100">
+    </div>
+      
+      <div>
+        <h2>Agri Land</h2>
+        <p>The simplest way of bringing land developers together with small farms. Land developers can list or post their small farms for lease.</p>
+        <p class="ma-0"><a href="../Login/agriland.php?category=cat1" class="button pa-0">View Lands</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column pa-1  mb-0">
+    <div class="card pa-2">
+    <div class="land-img">
+      <img src="../images/2.jpg" class="w-100 h-100">
+    </div>
+      <div >
+        <h2>Small Farms</h2>
+        <p>List your Agricultural land for  lease. Our numerous buyers will search your agri property listings and contact you directly for leasing.</p>
+        <p class="ma-0"><a href="../Login/farmland.php?category=cat2" class="button pa-0">View Lands</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="column pa-1  mb-0">
+    <div class="card pa-2">
+    <div class="land-img">
+      <img src="../images/4.jpg" class="w-100 h-100">
+    </div>
+      <div>
+        <h2>Estate Lands</h2>
+        <p>Estate owners can list or post coffee plantation, coconut, tea, rubber, cashew, areca nut, cocoa and oil palm estate for lease.</p>
+
+        <p class="ma-0"><a href="../Login/estateland.php?category=cat3" class="button pa-0">View Lands</a></p>
+ 
+      </div>
+    </div>
+  </div>
+</div>
     		<script src="../assets/js/jquery.min.js"></script>
             <script src="../assets/js/jquery.scrolly.min.js"></script>
             <script src="../assets/js/jquery.scrollex.min.js"></script>
